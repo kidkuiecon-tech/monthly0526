@@ -1,0 +1,493 @@
+User:
+
+[File: pasted-text.txt] [File: 20260527 Global Markets Summary (May 2026).docx]
+
+ช่วยเรา update html นี้ แต่ใช้ข้อมูลล่าสุด ได้ไหม
+
+Assistant:
+
+ได้เลย ผมจะช่วยอัปเดต HTML ให้เป็นข้อมูลเดือน พ.ค. 2026 ตามเอกสาร Word ที่ให้มา
+
+ต่อไปนี้คือโค้ด HTML ที่อัปเดตแล้ว:
+
+``html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Economic & Market Briefing | พฤษภาคม 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+            line-height: 1.7; color: #333; background-color: #F4F7FC;
+            padding: 20px; font-size: 15px;
+        }
+        .container {
+            max-width: 900px; margin: auto; background: #fff;
+            padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .color-bar {
+            display: flex; height: 5px;
+            margin: -30px -30px 24px -30px; border-radius: 8px 8px 0 0; overflow: hidden;
+        }
+        .color-bar span { flex: 1; }
+        .color-bar span:nth-child(1) { background: #1C3765; }
+        .color-bar span:nth-child(2) { background: #CD2036; }
+        .color-bar span:nth-child(3) { background: #377DFF; }
+        .color-bar span:nth-child(4) { background: #2DCA8C; }
+        .color-bar span:nth-child(5) { background: #FFBE3D; }
+        .color-bar span:nth-child(6) { background: #FF715B; }
+        h1 {
+            border-bottom: 2px solid #1C3765; color: #1C3765;
+            padding-bottom: 10px; text-align: center; font-size: 1.6em; font-weight: 800;
+        }
+        h2 {
+            color: #fff; padding: 10px 14px; border-radius: 4px;
+            font-size: 1.05em; font-weight: 700; margin-top: 32px;
+            font-family: 'Space Mono', monospace; letter-spacing: 1px;
+        }
+        h2.global    { background: #1C3765; }
+        h2.us        { background: #CD2036; }
+        h2.eu        { background: #1a4b8f; border-left: 5px solid #FFBE3D; }
+        h2.japan     { background: #FF715B; }
+        h2.china     { background: #2DCA8C; }
+        h2.asean     { background: #1aaa72; }
+        h2.other-em  { background: #377DFF; }
+        h2.corporate { background: #1C3765; border-left: 5px solid #FFBE3D; }
+        h3 {
+            color: #1C3765; border-bottom: 1px solid #ddd;
+            padding-bottom: 5px; margin-top: 20px; font-size: 1em; font-weight: 700;
+        }
+        h4 { color: #1C3765; font-size: 0.95em; font-weight: 700; margin-top: 16px; margin-bottom: 6px; }
+        .section {
+            margin-bottom: 20px; padding: 15px; border-left: 5px solid #ddd;
+        }
+        .section.global    { border-left-color: #1C3765; background: #f8fafd; border-radius: 0 4px 4px 0; }
+        .section.us        { border-left-color: #CD2036; }
+        .section.eu        { border-left-color: #FFBE3D; }
+        .section.japan     { border-left-color: #FF715B; }
+        .section.china     { border-left-color: #2DCA8C; }
+        .section.asean     { border-left-color: #1aaa72; }
+        .section.other-em  { border-left-color: #377DFF; }
+        .section.corporate { border-left-color: #1C3765; }
+        .sentiment {
+            display: inline-block; padding: 4px 12px; border-radius: 20px;
+            font-weight: 700; font-size: 0.8em; margin-top: 10px;
+            font-family: 'Space Mono', monospace; letter-spacing: 0.5px;
+        }
+        .positive { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .negative { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .neutral  { background-color: #e2e3e5; color: #383d41; border: 1px solid #d6d8db; }
+        .mixed    { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .content {
+            margin-top: 10px; text-align: justify;
+            font-size: 14.5px; line-height: 1.85; color: #3a4a60;
+        }
+        .bullet-list {
+            margin: 10px 0 0 0; padding-left: 20px;
+            color: #3a4a60; font-size: 14.5px; line-height: 1.85;
+        }
+        .bullet-list li { margin-bottom: 6px; }
+        .key-box { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+        .key-item {
+            flex: 1; min-width: 200px; background: #F4F7FC;
+            border-radius: 6px; padding: 12px 14px; border-top: 3px solid;
+            font-size: 13.5px; color: #3a4a60; line-height: 1.7;
+        }
+        .key-item strong {
+            color: #1C3765; display: block; margin-bottom: 4px;
+            font-size: 12px; font-family: 'Space Mono', monospace;
+            letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .key-item:nth-child(1) { border-color: #CD2036; }
+        .key-item:nth-child(2) { border-color: #377DFF; }
+        .key-item:nth-child(3) { border-color: #FFBE3D; }
+        .key-item:nth-child(4) { border-color: #2DCA8C; }
+        .country-block { margin-top: 14px; border: 1px solid #e8ecf2; border-radius: 6px; overflow: hidden; }
+        .country-title {
+            background: #EEF2F9; padding: 7px 14px; font-weight: 700;
+            font-size: 13.5px; color: #1C3765; border-bottom: 1px solid #dde4ef;
+        }
+        .country-body { padding: 10px 14px; }
+        .country-body .bullet-list { margin-top: 4px; }
+        .corp-block { margin-top: 14px; border: 1px solid #e8ecf2; border-radius: 6px; overflow: hidden; }
+        .corp-title {
+            background: #1C3765; color: #fff; padding: 7px 14px;
+            font-weight: 700; font-size: 13px;
+            font-family: 'Space Mono', monospace; letter-spacing: 0.3px;
+        }
+        .corp-body { padding: 10px 14px; font-size: 14px; color: #3a4a60; line-height: 1.8; }
+        .badge {
+            display: inline-block; font-size: 11px; font-weight: 700;
+            padding: 3px 10px; border-radius: 20px; font-family: 'Space Mono', monospace;
+        }
+        .badge-neg   { background: #f8d7da; color: #721c24; }
+        .badge-neu   { background: #e2e3e5; color: #383d41; }
+        .badge-pos   { background: #d4edda; color: #155724; }
+        .badge-mixed { background: #fff3cd; color: #856404; }
+        .footer {
+            margin-top: 40px; font-size: 0.8em; text-align: center; color: #777;
+            border-top: 1px solid #eee; padding-top: 20px; font-family: 'Space Mono', monospace;
+        }
+        .pdf-bar {
+            position: sticky; top: 16px; z-index: 100; display: flex;
+            justify-content: flex-end; margin: -10px -30px 20px -30px;
+            padding: 10px 20px; pointer-events: none;
+        }
+        .btn-pdf {
+            pointer-events: all; display: inline-flex; align-items: center; gap: 8px;
+            background: #1C3765; color: #fff; border: none; padding: 10px 20px;
+            border-radius: 6px; font-family: 'Space Mono', monospace; font-size: 12px;
+            font-weight: 700; letter-spacing: 1px; cursor: pointer;
+            box-shadow: 0 3px 14px rgba(28,55,101,0.35);
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            text-transform: uppercase;
+        }
+        .btn-pdf:hover { background: #CD2036; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(205,32,54,0.35); }
+        .btn-pdf:active { transform: translateY(0); }
+        .btn-pdf svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        @page { margin: 12mm 14mm; size: A4; }
+        @media print {
+            body { background: #fff; padding: 0; font-size: 12.5px; orphans: 3; widows: 3; }
+            .container { box-shadow: none; border-radius: 0; padding: 16px 24px; max-width: 100%; }
+            .pdf-bar { display: none !important; }
+            * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            .color-bar { margin: -16px -24px 20px -24px; }
+            h2 { break-after: avoid; page-break-after: avoid; }
+            h3, h4 { break-after: avoid; break-inside: avoid; page-break-after: avoid; }
+            .section, .country-block, .corp-block, .key-box { break-inside: avoid; page-break-inside: avoid; }
+            .content { orphans: 3; widows: 3; }
+            h2.us        { break-before: page; page-break-before: always; }
+            h2.eu        { break-before: page; page-break-before: always; }
+            h2.japan     { break-before: page; page-break-before: always; }
+            h2.china     { break-before: page; page-break-before: always; }
+            h2.asean     { break-before: page; page-break-before: always; }
+            h2.other-em  { break-before: page; page-break-before: always; }
+            h2.corporate { break-before: page; page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="pdf-bar">
+        <button class="btn-pdf" onclick="generatePDF()">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            Export PDF
+        </button>
+    </div>
+
+    <div class="color-bar"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+    <h1>Global Economic &amp; Market Briefing</h1>
+    <p style="text-align:center; font-weight:600; color:#1C3765; margin-top:-6px; margin-bottom:20px;">พฤษภาคม 2026</p>
+
+    <!-- ══ GLOBAL OVERVIEW ══ -->
+    <h2 class="global">🌐 GLOBAL OVERVIEW</h2>
+    <div class="section global">
+        <div class="key-box">
+            <div class="key-item">
+                <strong>🔴 ภูมิรัฐศาสตร์</strong>
+                สงครามสหรัฐฯ–อิหร่านสลับผันผวน ข้อตกลงหยุดยิงล้มเหลว (5 พ.ค.) ก่อนจะเริ่มเจรจาสันติภาพเปิดช่องแคบฮอร์มุซในช่วงปลายเดือน (21 พ.ค.)
+            </div>
+            <div class="key-item">
+                <strong>🔵 ตลาดหุ้น</strong>
+                ดัชนีหุ้นโลกและเอเชียพุ่งทำสถิติสูงสุดใหม่ นำโดยหุ้นกลุ่มชิปอย่าง Nvidia, Micron และ TSMC ท่ามกลางกระแส AI (21 พ.ค., 27 พ.ค.)
+            </div>
+            <div class="key-item">
+                <strong>🟡 พันธบัตร</strong>
+                อัตราผลตอบแทน UST 30Y พุ่งแตะ 5.18% สูงสุดตั้งแต่ปี 2007 จากความกังวลเงินเฟ้อพลังงาน ก่อนจะเริ่มชะลอตัวปลายเดือน (20 พ.ค., 26 พ.ค.)
+            </div>
+            <div class="key-item">
+                <strong>🟢 น้ำมัน / ดอลลาร์</strong>
+                Brent พุ่งทะลุ 110 ดอลลาร์ฯ/บาร์เรล ก่อนร่วงต่ำกว่า 100 ดอลลาร์ฯ รับความหวังเปิดช่องแคบ DXY แข็งค่าในฐานะ Safe Haven (14 พ.ค., 26 พ.ค.)
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ US ══ -->
+    <h2 class="us">🇺🇸 UNITED STATES</h2>
+    <div class="section us">
+        <span class="sentiment mixed">⬤ MIXED / VOLATILE</span>
+
+        <h4>เศรษฐกิจ &amp; เงินเฟ้อ</h4>
+        <div class="content">
+            ดัชนีราคาผู้บริโภค (CPI) เดือน เม.ย. เร่งตัวสู่ <strong>3.8% YoY</strong> (vs. prev. 3.3%) สูงสุดนับตั้งแต่กลางปี 2023 จากราคาพลังงานที่พุ่งขึ้น <strong>17.9%</strong> (13 พ.ค.) ขณะที่ดัชนีความเชื่อมั่นผู้บริโภค UMich เดือน พ.ค. ร่วงลงสู่ระดับ <strong>44.8</strong> (vs. prev. 48.2) สะท้อนความกังวลขั้นวิกฤตเกี่ยวกับราคาน้ำมันเบนซินและค่าครองชีพ (25 พ.ค.)
+        </div>
+
+        <h4>ตลาดหุ้น</h4>
+        <div class="content">
+            ดัชนี S&amp;P 500 ปิดเหนือระดับ <strong>7,500 จุดเป็นครั้งแรก</strong> นำโดยหุ้นกลุ่มเทคโนโลยีและ AI (15 พ.ค.) <strong>Nvidia</strong> รายงานยอดขายสูงกว่าคาดพร้อมประกาศซื้อหุ้นคืนมูลค่า <strong>8 หมื่นล้านดอลลาร์ฯ</strong> (21 พ.ค.) ขณะที่ <strong>Micron Technology</strong> พุ่งขึ้นถึง 19% จนมูลค่าตลาดทะลุ <strong>1 ล้านล้านดอลลาร์ฯ</strong> (27 พ.ค.)
+        </div>
+
+        <h4>ตลาดพันธบัตร</h4>
+        <div class="content">
+            ตลาดตราสารหนี้ถูกเทขายอย่างหนักส่งผลให้อัตราผลตอบแทนอายุ 30 ปี แตะระดับ <strong>5.1837%</strong> สูงสุดนับตั้งแต่ปี 2007 (20 พ.ค.) รายงาน FOMC Minutes ระบุว่า Fed เห็นควร<strong>คงอัตราดอกเบี้ยในระดับสูงต่อไป</strong> และพร้อมพิจารณาปรับขึ้นหากเงินเฟ้อกลับมาเร่งตัว (21 พ.ค.) อัตราผลตอบแทนอายุ 2 ปี ขยับขึ้นสู่ <strong>4.071%</strong> สูงสุดในรอบ 15 เดือน (27 พ.ค.)
+        </div>
+
+        <h4>ค่าเงินดอลลาร์ฯ</h4>
+        <div class="content">
+            ดัชนี DXY ปรับตัวแข็งค่าขึ้นแตะระดับ <strong>99.33</strong> สูงสุดในรอบหลายเดือน โดยได้รับแรงหนุนจากอัตราผลตอบแทนพันธบัตรที่สูงและสถานะ Safe Haven (20 พ.ค.) ก่อนที่จะอ่อนตัวลงเล็กน้อยในช่วงปลายเดือนหลังมีกระแสข่าวการเจรจาสันติภาพในตะวันออกกลาง (25 พ.ค., 27 พ.ค.)
+        </div>
+    </div>
+
+    <!-- ══ EU ══ -->
+    <h2 class="eu">🇪🇺 EUROPE</h2>
+    <div class="section eu">
+        <span class="sentiment negative">⬤ NEGATIVE</span>
+
+        <h4>เศรษฐกิจ &amp; เงินเฟ้อ</h4>
+        <div class="content">
+            อัตราเงินเฟ้อทั่วไป (CPI) ของยูโรโซนเดือน เม.ย. ทรงตัวที่ <strong>3.0% YoY</strong> สูงกว่าเป้าหมายของ ECB จากแรงกดดันด้านราคาพลังงาน (21 พ.ค.) ขณะที่ดัชนีความเชื่อมั่นภาคธุรกิจเยอรมนี (Ifo) เดือน พ.ค. ขยับขึ้นสู่ <strong>84.9</strong> (vs. prev. 84.5) ส่งสัญญาณความกังวลต่อสงครามลดลง (25 พ.ค.)
+        </div>
+
+        <h4>ตลาดหุ้น</h4>
+        <div class="content">
+            ดัชนี Euro Stoxx 50 ปรับตัวขึ้นรับจิตวิทยาเชิงบวกจากการเจรจาในตะวันออกกลาง (20 พ.ค., 25 พ.ค.) อย่างไรก็ตาม ตลาดเผชิญแรงกดดันจากหุ้นกลุ่ม Luxury Goods หลัง <strong>Burberry</strong> เตือนว่าความไม่แน่นอนทางเศรษฐกิจและสงครามจะบั่นทอนความเชื่อมั่นของผู้บริโภค (15 พ.ค.)
+        </div>
+
+        <h4>ตลาดพันธบัตร &amp; นโยบายการเงิน</h4>
+        <div class="content">
+            ตลาดพันธบัตรยุโรปเผชิญแรงเทขายตามทิศทางสหรัฐฯ เจ้าหน้าที่ระดับสูงของ ECB รวมถึง <strong>Isabel Schnabel</strong> ส่งสัญญาณเชิง Hawkish ว่ามีความจำเป็นต้องปรับขึ้นอัตราดอกเบี้ยในเดือน มิ.ย. เพื่อควบคุมเงินเฟ้อ ทำให้ตลาดปรับเพิ่มโอกาสการขึ้นดอกเบี้ยสู่ระดับ <strong>80%</strong> (12 พ.ค., 27 พ.ค.)
+        </div>
+
+        <h4>อังกฤษ &amp; ฝรั่งเศส</h4>
+        <div class="content">
+            รัฐบาลอังกฤษเผชิญ<strong>วิกฤตศรัทธาจนเกิดการลาออกระลอกใหญ่</strong> ส่งผลให้เงินปอนด์และตลาด Gilts ผันผวนจากนโยบายการคลังที่ไม่แน่นอน (13 พ.ค., 14 พ.ค.) ส่วนในฝรั่งเศส ตลาดกังวลเกี่ยวกับคะแนนนิยมของพรรคประชานิยมที่เพิ่มขึ้น ซึ่งอาจส่งผลให้ถูก S&amp;P หั่นความน่าเชื่อถือลง (25 พ.ค.)
+        </div>
+    </div>
+
+    <!-- ══ JAPAN ══ -->
+    <h2 class="japan">🇯🇵 JAPAN</h2>
+    <div class="section japan">
+        <span class="sentiment mixed">⬤ MIXED</span>
+
+        <h4>เศรษฐกิจ &amp; เงินเฟ้อ</h4>
+        <div class="content">
+            GDP ไตรมาส 1 ขยายตัว <strong>2.1% YoY</strong> (vs. prev. 0.8%) และ 0.5% QoQ ทำสถิติเติบโตสูงสุดในรอบ 6 ไตรมาส หนุนจากการบริโภคและการส่งออก (20 พ.ค.) ขณะที่ดัชนี CPI เดือน เม.ย. ชะลอตัวสู่ <strong>1.4% YoY</strong> (vs. prev. 1.5%) ต่ำสุดในรอบ 4 ปีจากมาตรการอุดหนุนราคาพลังงานของรัฐบาล (21 พ.ค.)
+        </div>
+
+        <h4>ตลาดหุ้น</h4>
+        <div class="content">
+            ดัชนี Nikkei 225 และ Topix เร่งตัว<strong>ทำสถิติสูงสุดเป็นประวัติการณ์</strong> ขับเคลื่อนด้วยหุ้นที่ได้รับอานิสงส์จาก AI รวมถึง <strong>Ajinomoto</strong> ที่ปรับขึ้นถึง 61% ในปีนี้จากการผลิตแผ่นฉนวนเซมิคอนดักเตอร์ (26 พ.ค., 27 พ.ค.) หุ้นธนาคารยังนำตลาดขานรับประโยชน์จากส่วนต่างอัตราดอกเบี้ยที่กว้างขึ้น (20 พ.ค.)
+        </div>
+
+        <h4>ตลาดพันธบัตร</h4>
+        <div class="content">
+            อัตราผลตอบแทน JGBs อายุ 10 ปีและ 20 ปี ปรับตัวสูงขึ้นเกือบ <strong>10 bps</strong> สู่ระดับ<strong>สูงสุดตั้งแต่ปี 1996</strong> โดย Term Premium พุ่งขึ้นกว่า 70 bps (14 พ.ค., 26 พ.ค.) สะท้อนแรงกดดันที่บีบให้ BoJ ต้องพิจารณาขึ้นดอกเบี้ยในการประชุมเดือน มิ.ย. (20 พ.ค., 27 พ.ค.)
+        </div>
+
+        <h4>ค่าเงินเยน</h4>
+        <div class="content">
+            ค่าเงินเยนอ่อนค่าลงสู่ระดับ <strong>159.22 เยนต่อดอลลาร์ฯ</strong> เผชิญแรงกดดันจากการคงดอกเบี้ยของ BoJ และต้นทุนพลังงานนำเข้าที่สูง (26 พ.ค., 27 พ.ค.) ส่งผลให้รัฐมนตรีคลังญี่ปุ่นต้อง<strong>ออกมาเตือนด้วยวาจาบ่อยครั้ง</strong> ขณะที่นักลงทุนยังทำ Carry Trade จากความผันผวนของตลาดที่ต่ำ (20 พ.ค., 25 พ.ค.)
+        </div>
+    </div>
+
+    <!-- ══ CHINA ══ -->
+    <h2 class="china">🇨🇳 CHINA &amp; HONG KONG</h2>
+    <div class="section china">
+        <span class="sentiment positive">⬤ POSITIVE (Relative)</span>
+
+        <h4>เศรษฐกิจ &amp; การค้า</h4>
+        <div class="content">
+            ดัชนีราคาผู้บริโภค (CPI) เดือน เม.ย. ปรับตัวขึ้น <strong>1.2% YoY</strong> (vs. mkt. 1.0%) และ PPI พุ่ง <strong>2.8% YoY</strong> (vs. mkt. 2.5%) สูงสุดในรอบ 4 ปี (12 พ.ค.) ดุลการค้าเกินดุล <strong>8.48 หมื่นล้านดอลลาร์ฯ</strong> หนุนด้วยยอดส่งออกที่พุ่งขึ้น 14.1% YoY เนื่องจากภาคธุรกิจเร่งกักตุนสินค้าอุตสาหกรรมและหนีปัญหาค่าขนส่งที่สูงขึ้น (11 พ.ค.)
+        </div>
+
+        <h4>ตลาดหุ้น</h4>
+        <div class="content">
+            ดัชนีหุ้นได้รับแรงหนุนจากหุ้นกลุ่มเซมิคอนดักเตอร์และระบบ AI ภายในประเทศ เช่น <strong>Yangtze Memory Technologies</strong> ที่เตรียมเสนอขายหุ้น IPO (21 พ.ค., 27 พ.ค.) แม้ว่าหุ้นยักษ์ใหญ่กลุ่มแพลตฟอร์มอย่าง <strong>Alibaba และ Tencent</strong> จะเผชิญแรงเทขายจากความกังวลรายได้และต้นทุนการดำเนินงานที่สูงขึ้น (27 พ.ค.)
+        </div>
+
+        <h4>นโยบาย &amp; ความสัมพันธ์สหรัฐฯ</h4>
+        <div class="content">
+            รัฐบาลปักกิ่งออกคำสั่ง<strong>กวาดล้างการซื้อขายหุ้นข้ามแดน</strong>เพื่อสะกัดเงินทุนไหลออก ส่งผลให้บัญชีที่ไม่ทำตามต้องถูกชำระบัญชี (26 พ.ค.) การหารือระหว่าง Trump-Xi นำมาซึ่งข้อตกลงที่จีนยอม<strong>ซื้อเครื่องบิน Boeing 200 ลำ</strong>และสินค้าเกษตร 1.7 หมื่นล้านดอลลาร์ฯ ต่อปี เพื่อแลกกับการผ่อนปรนภาษี (15 พ.ค.)
+        </div>
+    </div>
+
+    <!-- ══ ASEAN ══ -->
+    <h2 class="asean">🌏 ASEAN</h2>
+    <div class="section asean">
+        <span class="sentiment mixed">⬤ MIXED (Energy Pressure)</span>
+
+        <div class="country-block">
+            <div class="country-title">🇹🇭 ไทย (Thailand)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>GDP ไตรมาส 1 ขยายตัว <strong>2.8% YoY</strong> (vs. mkt. 2.2%) เติบโตเหนือความคาดหมาย หนุนจากการเบิกจ่ายภาครัฐที่เร่งตัวขึ้น 3.4% และภาคการส่งออกที่พุ่ง 12.6% (19 พ.ค.)</li>
+                    <li>รัฐบาลเตรียมเปิดตัวมาตรการ<strong>"คนละครึ่ง พลัส"</strong> เพื่อหนุนกำลังซื้อและบรรเทาค่าครองชีพจากราคาน้ำมัน (25 พ.ค.) ธปท. ปรับประมาณการ GDP ปีนี้ขึ้นเป็น <strong>2.1%</strong> (vs. prev. 1.5%) (7 พ.ค., 8 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇮🇩 อินโดนีเซีย (Indonesia)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>อัตราเงินเฟ้อเดือน เม.ย. ชะลอตัวลงสู่ระดับ <strong>2.42% YoY</strong> (vs. prev. 3.48%) (5 พ.ค.) อย่างไรก็ตาม BI ปรับขึ้นดอกเบี้ย <strong>50 bps สู่ระดับ 5.25%</strong> เพื่อปกป้องเงินรูเปียห์ที่อ่อนค่าลงต่ำสุดเป็นประวัติการณ์ (21 พ.ค.)</li>
+                    <li>รัฐบาลเตรียมประกาศจัดตั้ง <strong>"Danantara Sumberdaya Indonesia"</strong> เพื่อควบคุมการส่งออกน้ำมันปาล์มและถ่านหิน (25 พ.ค.) ส่งผลให้โรงกลั่นน้ำมันปาล์มขนาดใหญ่ชะลอการรับซื้อและการประมูลราคาหยุดชะงัก (27 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇵🇭 ฟิลิปปินส์ (Philippines)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>อัตราเงินเฟ้อเดือน เม.ย. กระโดดขึ้นสู่ระดับ <strong>7.2%</strong> (vs. prev. 4.1%) สูงกว่ากรอบเป้าหมายของ BSP จากราคาน้ำมัน (5 พ.ค.) ตลาดประเมินว่า BSP อาจต้องเร่งปรับขึ้นดอกเบี้ยอีก <strong>50 bps</strong> ในเดือน มิ.ย. (21 พ.ค.)</li>
+                    <li>เงินสำรองระหว่างประเทศปรับลดลง <strong>-2.35%</strong> ท่ามกลางปัญหาความขัดแย้งระหว่างตระกูล Marcos และรองประธานาธิบดี Sara Duterte ที่ถูกถอดถอน (8 พ.ค., 12 พ.ค.) ตลาดหุ้นซบเซาจากข่าวอุบัติเหตุอาคารก่อสร้างถล่ม (25 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇲🇾 มาเลเซีย (Malaysia)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>อัตราเงินเฟ้อ (CPI) เดือน เม.ย. ขยายตัว <strong>1.9% YoY</strong> (vs. prev. 1.7%) ขณะที่ PPI พุ่ง <strong>5.4% YoY</strong> (vs. prev. 1.1%) ขยายตัวเร็วที่สุดตั้งแต่ปี 2022 ตามต้นทุนสกัดน้ำมันปิโตรเลียมที่ปรับขึ้น <strong>74.5%</strong> (20 พ.ค., 26 พ.ค.)</li>
+                    <li>ธนาคารกลางคงอัตราดอกเบี้ยที่ <strong>2.75%</strong> เพื่อรักษาสมดุล (8 พ.ค.) รัฐมนตรีเศรษฐกิจยอมรับว่าจำนวนผู้ว่างงานเดือน เม.ย. เพิ่มขึ้น <strong>21%</strong> และอุตสาหกรรมการบินเที่ยวบินลดลงถึง <strong>-31.5%</strong> จากการยกเลิกเส้นทางบินไปตะวันออกกลาง (27 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇸🇬 สิงคโปร์ (Singapore)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>GDP ไตรมาส 1 ขยายตัวอย่างแข็งแกร่งถึง <strong>6.0% YoY</strong> (vs. prev. 5.0%) สูงสุดนับตั้งแต่ Q3/2024 (25 พ.ค.) ภาคการผลิตเดือน เม.ย. ขยายตัว <strong>17.6% YoY</strong> นำโดยกลุ่มอิเล็กทรอนิกส์และเซมิคอนดักเตอร์ที่ขยายตัว <strong>42.6%</strong> (27 พ.ค.)</li>
+                    <li>อัตราเงินเฟ้อเดือน เม.ย. ทรงตัวที่ <strong>1.8%</strong> ต่ำกว่าคาด เงินเฟ้อพื้นฐานชะลอลงมาที่ <strong>1.4%</strong> (26 พ.ค.) ผลักดันให้ดัชนี STI พุ่งแตะระดับ <strong>5,093 จุด</strong> สร้างสถิติสูงสุดเป็นประวัติการณ์ (26 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇻🇳 เวียดนาม (Vietnam)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>ดัชนี VN-Index แกว่งตัวผันผวนท่ามกลางสภาพคล่องและมูลค่าการซื้อขายที่ลดลง <strong>-17.0%</strong> แม้จะสามารถปิดบวกได้ แต่นักลงทุนขาดแรงพยุงจากหุ้นยักษ์ใหญ่อย่างกลุ่ม Vingroup (13 พ.ค.)</li>
+                    <li>กระทรวงการคลังพิจารณาเสนอมาตรการ<strong>แบนการเดินทางออกนอกประเทศ</strong>สำหรับเจ้าของธุรกิจที่มีหนี้ค้างชำระภาษีแม้เพียง 38 ดอลลาร์ฯ (7 พ.ค.) <strong>VinFast</strong> แต่งตั้งบุตรชายของผู้ก่อตั้งขึ้นเป็นประธานบอร์ดบริหารคนใหม่ (25 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ OTHER EM ══ -->
+    <h2 class="other-em">🌍 OTHER ASIA &amp; EMERGING MARKETS</h2>
+    <div class="section other-em">
+        <span class="sentiment positive">⬤ POSITIVE (selective)</span>
+
+        <div class="country-block">
+            <div class="country-title">🇰🇷 เกาหลีใต้ (South Korea)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>ดัชนี Kospi ทะยานขึ้น<strong>ทะลุสถิติใหม่เป็นประวัติการณ์</strong> นำโดยหุ้น SK Hynix และ Samsung Electronics ที่มูลค่าตลาดพุ่งรับกระแส AI รวมถึงบรรลุข้อตกลงหลีกเลี่ยงการประท้วงหยุดงานได้สำเร็จ (12 พ.ค., 21 พ.ค., 27 พ.ค.)</li>
+                    <li>นักลงทุนบางส่วนเริ่มกังวลถึงความเปราะบางของสัดส่วนหุ้นที่กระจุกตัวอยู่ในสองบริษัทนี้ถึงเกือบ <strong>50%</strong> ของดัชนี (15 พ.ค., 26 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇹🇼 ไต้หวัน (Taiwan)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>ดัชนี Taiex ทำผลงานได้โดดเด่นสอดคล้องกับเอเชียเหนือ โดยได้รับแรงส่งจากหุ้น <strong>TSMC</strong> และโครงสร้างพื้นฐานที่เกี่ยวเนื่องกับไฟฟ้าและ Transformers สำหรับ AI (6 พ.ค., 15 พ.ค., 26 พ.ค.)</li>
+                    <li>ทางการไต้หวันเริ่มมาตรการ<strong>ปราบปรามการลักลอบส่งออกชิปไปยังจีน</strong> (22 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="country-block">
+            <div class="country-title">🇮🇳 อินเดีย (India)</div>
+            <div class="country-body">
+                <ul class="bullet-list">
+                    <li>ดัชนีหุ้นอินเดียถูก<strong>เทขายอย่างรุนแรง</strong>ท่ามกลางปัญหาการจ้างงานและราคาน้ำมันที่กระทบต่อดุลการค้า นักลงทุนต่างชาติขายหุ้นสุทธิกว่า <strong>2.2 หมื่นล้านดอลลาร์ฯ</strong> (13 พ.ค., 21 พ.ค.)</li>
+                    <li>ค่าเงินรูปีอ่อนค่าจน <strong>RBI ต้องเข้าแทรกแซง</strong> และนายกรัฐมนตรีต้องออกมารณรงค์ให้ประชาชนลดการนำเข้าทองคำ (12 พ.ค., 21 พ.ค.)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ CORPORATE HIGHLIGHTS ══ -->
+    <h2 class="corporate">🏢 CORPORATE HIGHLIGHTS</h2>
+    <div class="section corporate">
+
+        <div class="corp-block">
+            <div class="corp-title">🤖 AI และโครงสร้างพื้นฐาน</div>
+            <div class="corp-body">
+                <strong>Anthropic</strong> เตรียมทำ IPO ระดมทุนครั้งใหญ่พร้อมชิงส่วนแบ่งตลาด AI เหนือ OpenAI ขณะที่ <strong>Alphabet และ Amazon</strong> ออกหุ้นกู้เพื่อลงทุน Data Center ทั่วโลก (13 พ.ค., 25 พ.ค.) <strong>Apple</strong> อนุญาตให้ใช้ AI คู่แข่งพร้อมเตือนต้นทุนชิปที่สูงขึ้น ส่วน <strong>SoftBank</strong> เตรียมลงทุนศูนย์ข้อมูล AI ในฝรั่งเศส (6 พ.ค., 12 พ.ค.) ท่ามกลางกระแสที่ <strong>Cloudflare</strong> เร่งปรับโครงสร้างพนักงานสู่ยุค AI (8 พ.ค.)
+            </div>
+        </div>
+
+        <div class="corp-block">
+            <div class="corp-title">💾 เซมิคอนดักเตอร์และฮาร์ดแวร์</div>
+            <div class="corp-body">
+                <strong>Samsung, SK Hynix และ Micron Technology</strong> มีมูลค่าตลาดพุ่งทะลุ 1 ล้านล้านดอลลาร์ฯ รับอานิสงส์ความต้องการฮาร์ดแวร์ AI ทั่วโลก (6 พ.ค., 27 พ.ค.) <strong>Nvidia</strong> รายงานกำไรแข็งแกร่งพร้อมประกาศซื้อหุ้นคืน 8 หมื่นล้านดอลลาร์ฯ ขณะที่ <strong>Cerebras Systems</strong> ประสบความสำเร็จในการทำ IPO ขนาดใหญ่ (12 พ.ค., 21 พ.ค.) อย่างไรก็ตาม <strong>Nintendo</strong> เผชิญกำไรหดตัวจากต้นทุนชิปหน่วยความจำที่แพงขึ้น (11 พ.ค., 12 พ.ค.)
+            </div>
+        </div>
+
+        <div class="corp-block">
+            <div class="corp-title">🚗 ยานยนต์ แบตเตอรี่ และชิ้นส่วน</div>
+            <div class="corp-body">
+                <strong>Ferrari</strong> เปิดตัวรถยนต์ไฟฟ้า 100% รุ่นแรกแบบ 5 ที่นั่ง ขณะที่ <strong>Leapmotor</strong> บุกตลาดเยอรมนีด้วยข้อเสนอรถเช่าราคาถูก (8 พ.ค., 25 พ.ค.) <strong>Xiaomi</strong> เปิดตัว SUV ไฟฟ้าเพื่อกระจายความเสี่ยงจากต้นทุนชิปสมาร์ตโฟน ส่วน <strong>VinFast</strong> เปลี่ยนตัวประธานบอร์ดบริหารเพื่อรับมือภาวะขาดทุน (21 พ.ค., 25 พ.ค.) <strong>Hyundai และ LG</strong> เร่งพัฒนาหุ่นยนต์เพื่อใช้งานในกองทัพเกาหลีใต้ (15 พ.ค.)
+            </div>
+        </div>
+
+        <div class="corp-block">
+            <div class="corp-title">🛍️ ค้าปลีกและสินค้าฟุ่มเฟือย</div>
+            <div class="corp-body">
+                <strong>Walmart</strong> รายงานยอดขายโตแต่เตือนเรื่องอัตรากำไรที่ลดลงจากผลกระทบของราคาน้ำมันเชื้อเพลิง (21 พ.ค.) <strong>Burberry และ Pop Mart</strong> เผชิญยอดขายชะลอตัวจากความเชื่อมั่นผู้บริโภค (13 พ.ค., 15 พ.ค.) สวนทางกับ <strong>Ajinomoto</strong> ที่ราคาหุ้นพุ่ง 61% จากความสำเร็จในการผลิตแผ่นฉนวนเซมิคอนดักเตอร์ (27 พ.ค.)
+            </div>
+        </div>
+
+        <div class="corp-block">
+            <div class="corp-title">✈️ การบิน อวกาศ และโลจิสติกส์</div>
+            <div class="corp-body">
+                <strong>Norwegian Cruise Line</strong> ปรับลดคาดการณ์กำไรลงจากราคาน้ำมันและอุปสงค์การเดินทางที่ชะลอตัว ขณะที่ <strong>Amazon</strong> เปิดตัวบริการโลจิสติกส์กดดันคู่แข่งอย่าง FedEx (5 พ.ค., 6 พ.ค.) <strong>Boeing</strong> ตกลงส่งมอบเครื่องบินพาณิชย์ 200 ลำให้จีนซึ่งเป็นออเดอร์ใหญ่ครั้งแรกในรอบทศวรรษ ขณะที่ <strong>SpaceX</strong> เตรียมทำ IPO ระดมทุนครั้งใหญ่ (15 พ.ค., 25 พ.ค.)
+            </div>
+        </div>
+
+        <div class="corp-block">
+            <div class="corp-title">⛽ พลังงาน แร่ธาตุ และทรัพยากร</div>
+            <div class="corp-body">
+                <strong>ExxonMobil</strong> เตือนว่าการฟื้นฟูกำลังการผลิตน้ำมันต้องใช้เวลาแม้ช่องแคบฮอร์มุซจะเปิดใช้งานได้ตามปกติ (6 พ.ค.) <strong>Mosaic Co.</strong> ประกาศระงับการผลิตฟอสเฟตเกือบ 2 ล้านตันชั่วคราวเพื่อรับมือกับผลกระทบจากความขัดแย้งในตะวันออกกลาง (12 พ.ค.) <strong>Northern Star</strong> ประกาศเปลี่ยนตัว CEO ก่อนการเปิดตลาดหุ้น (21 พ.ค.)
+            </div>
+        </div>
+
+        <div class="corp-block">
+            <div class="corp-title">🏦 การเงิน การลงทุน และการจัดการสินทรัพย์</div>
+            <div class="corp-body">
+                <strong>Goldman Sachs</strong> ทำสถิติราคาหุ้นพุ่งทะลุ 1,000 ดอลลาร์ฯ เป็นครั้งแรกสะท้อนความเชื่อมั่นในตลาดที่พร้อมเปิดรับความเสี่ยง (27 พ.ค.) <strong>HSBC</strong> รายงานผลกำไรต่ำกว่าคาดกดดันตลาดหุ้นสหราชอาณาจักร (6 พ.ค.) <strong>Zip</strong> บรรลุข้อตกลงยุติข้อพิพาททางกฎหมายเพื่อรักษาสิทธิ์ในการใช้ชื่อแบรนด์ในออสเตรเลียได้สำเร็จ (21 พ.ค.)
+            </div>
+        </div>
+
+        <div class="corp-block">
+            <div class="corp-title">💊 เวชภัณฑ์และสื่อบันเทิง</div>
+            <div class="corp-body">
+                ยาเบาหวาน <strong>Mounjaro ของ Eli Lilly</strong> แซงหน้า Keytruda ขึ้นเป็นยาที่ขายดีที่สุดในโลก (7 พ.ค.) <strong>Walt Disney</strong> รายงานกำไรสตรีมมิ่งโตแต่ภาพยนตร์ Star Wars ภาคล่าสุดทำรายได้เปิดตัวต่ำสุดของแฟรนไชส์ (7 พ.ค., 25 พ.ค.) <strong>Spotify</strong> หุ้นพุ่งรับการใช้ AI ปรับแต่งเพลงและระบบการสำรองตั๋วคอนเสิร์ต (21 พ.ค.)
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Global Economic &amp; Market Briefing | พฤษภาคม 2026 | BLS Template</p>
+    </div>
+</div>
+
+<script>
+    function generatePDF() {
+        const btn = document.querySelector('.btn-pdf');
+        btn.textContent = 'กำลังสร้าง PDF...';
+        btn.disabled = true;
+        setTimeout(() => {
+            window.print();
+            btn.innerHTML = <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg> Export PDF;
+            btn.disabled = false;
+        }, 100);
+    }
+</script>
+</body>
+</html>
+``
+
